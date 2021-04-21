@@ -22,11 +22,11 @@ const postCSSPlugins = [
 class RunAfterCompile {
   apply(compiler) {
     compiler.hooks.done.tap('Copy images', function() {
-      fse.copySync('./app/assets/images', './dist/assets/images')
+      fse.copySync('./app/assets/images', './docs/assets/images')
     })
   }
 }
-npm
+
 let cssConfig = {
   test: /\.css$/i,
   use: ['css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCSSPlugins}}}]
