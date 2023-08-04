@@ -9,7 +9,10 @@
 <header class="site-header">
       <div class="wrapper">
         <div class="site-header__logo">
-          <!-- <img loading="lazy" src="assets/images/icons/clear-view-escapes.svg" /> -->
+          <?php 
+          $site_logo = get_field('site_logo', 'options');
+          ?>
+          <img loading="lazy" src="<?php echo esc_url($site_logo); ?>" />
         </div>
 
         <div class="site-header__menu-icon">
