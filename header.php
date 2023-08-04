@@ -1,35 +1,26 @@
-<!DOCTYPE html>
+<?php
+
+use Genesis\Theme\Theme;
+
+$headerFields = Theme::getHeaderFields();
+
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+
+    <?php
+        // display header scripts
+        if (!empty($headerFields['header_scripts'])) {
+            echo $headerFields['header_scripts'];
+        }
+    ?>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0"/>
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php get_template_part('templates/parts/favicon'); ?>
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-<header class="site-header">
-      <div class="wrapper">
-        <div class="site-header__logo">
-          <?php 
-          $site_logo = get_field('site_logo', 'options');
-          ?>
-          <img loading="lazy" src="<?php echo esc_url($site_logo); ?>" />
-        </div>
-
-        <div class="site-header__menu-icon">
-          <div class="site-header__menu-icon__middle"></div>
-        </div>
-
-        <div class="site-header__menu-content">
-          <div class="site-header__btn-container">
-            <a href="#" class="btn open-modal">Get in Touch</a>
-          </div>
-          <nav class="primary-nav primary-nav--pull-right">
-            <ul>
-              <li><a href="#our-beginning" id="our-beginning-link">Our Beginning</a></li>
-              <li><a href="#features" id="features-link">Features</a></li>
-              <li><a href="#testimonials" id="testimonials-link">Testimonials</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <?php wp_body_open(); ?>

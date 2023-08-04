@@ -1,5 +1,15 @@
 <?php 
 
+namespace Genesis;
+
+use function Genesis\asset;
+
+/** Register The Auto Loader */
+if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
+    wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'the-theme-name-text-domain'));
+}
+require $composer;
+
 function  gn_travel_styles() {
     // Main Style
     wp_enqueue_style( 'gn-travel-style', get_stylesheet_uri(), array(), '1.0' );

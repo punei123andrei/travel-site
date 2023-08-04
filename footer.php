@@ -1,10 +1,23 @@
-<footer class="site-footer">
-      <div class="wrapper">
-        <p><span class="site-footer__text">Copyright &copy; 2019 Clear View Escapes. All rights reserved.</span> <a href="#" class="btn btn--orange open-modal">Get in Touch</a></p>
-      </div>
-    </footer>
-<?php wp_footer(); ?>
-</body>
+<?php
+
+use Genesis\Theme\Theme;
+
+$footerFields = Theme::getFooterFields();
+
+?>
+
+        <footer>
+            <div class="site-info"></div>
+        </footer>
+
+        <?php wp_footer(); ?>
+
+        <?php
+            // display footer scripts
+            if (!empty($footerFields['footer_scripts'])) {
+                echo $footerFields['footer_scripts'];
+            }
+        ?>
+
+    </body>
 </html>
-
-

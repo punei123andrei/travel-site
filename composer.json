@@ -1,0 +1,75 @@
+{
+  "name": "Genesis/genesis-text-domain",
+  "description": "Genesis Wordpress Theme",
+  "type": "project",
+  "license": "GPL2",
+  "authors": [
+    {
+      "name": "Genesis",
+      "email": "punei.andrei123@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "6.1.4",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&k=b3JkZXJfaWQ9MTU0NTMyfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOS0wMy0wNiAxMzoyNjoyNw==&t=6.1.4"
+        },
+        "require": {
+          "ffraenz/private-composer-installer": "^5.0"
+        }
+      }
+    },
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^6.1.4",
+    "wpackagist-plugin/acf-extended": "0.8.9.3"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "skip-dev": true,
+    "allow-plugins": {
+      "ffraenz/private-composer-installer": true,
+      "composer/installers": true
+    }
+  },
+  "autoload": {
+    "files": [
+      "mix.php"
+    ],
+    "psr-4": {
+      "Genesis\\": "app/"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "wp-coding-standards/wpcs": "dev-master",
+    "phpcompatibility/phpcompatibility-wp": "dev-master",
+    "symfony/error-handler": "5.4.x-dev",
+    "maximebf/debugbar": "^1.17@dev",
+    "symfony/var-dumper": "5.4.x-dev",
+    "symfony/var-exporter": "5.4.x-dev"
+  },
+  "scripts": {
+    "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs phpcs --standard=WordPress",
+    "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+    "make-pot": "wp i18n make-pot . languages/_s.pot"
+  }
+}
