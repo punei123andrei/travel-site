@@ -15,3 +15,10 @@ add_image_size('small_card_photo_2x', 800, 385, true);
 
 add_image_size('modal_header_1x', 500, 245, true);
 add_image_size('modal_header_2x', 1000, 500, true);
+
+
+// Enable SVG file uploads
+add_filter( 'upload_mimes', function ( $mimes ) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+});

@@ -1,6 +1,6 @@
 <?php
 
-namespace TheThemeName\Theme;
+namespace Genesis\Theme;
 
 /**
  * Class used to hold all theme setup logic

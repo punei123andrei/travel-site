@@ -13,14 +13,15 @@ add_filter('acf/settings/url', function () {
 // Enable or disable acf in admin
 add_filter('acf/settings/show_admin', '__return_true');
 
+
 // define path and URL to the ACFE plugin
-define('ZITEC_ACFE_PATH', get_stylesheet_directory() . '/vendor/acf-extended/');
-define('ZITEC_ACFE_URL', get_stylesheet_directory_uri() . '/vendor/acf-extended/');
+// define('ZITEC_ACFE_PATH', get_stylesheet_directory() . '/vendor/acf-extended/');
+// define('ZITEC_ACFE_URL', get_stylesheet_directory_uri() . '/vendor/acf-extended/');
 
 // include the ACFE plugin
-include_once(ZITEC_ACFE_PATH . 'acf-extended.php');
+// include_once(ZITEC_ACFE_PATH . 'acf-extended.php');
 
 // customize the url setting to fix asset URLs
-add_filter('acfe/settings/url', function () {
-    return ZITEC_ACFE_URL;
-});
+// add_filter('acfe/settings/url', function () {
+//     return ZITEC_ACFE_URL;
+// });

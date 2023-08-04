@@ -4,7 +4,6 @@ namespace Genesis\Cleanup;
 
 use Genesis\Block\Block;
 
-use function Genesis\Theme\Config\dequeueContactScripts;
 
 /**
  * Class used for theme cleanup
@@ -51,7 +50,7 @@ class Cleanup
     {
         $block = new Block();
 
-        // if there is no cf7 block then dequeue scripts
+       // if there is no cf7 block then dequeue scripts
         if (!Block::displayBlockField('choose_form', 'acf/' . $block->getPrefix() . '-form')) {
             dequeueContactScripts();
         }
