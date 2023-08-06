@@ -1,0 +1,53 @@
+#content {
+    @include pos-rel;
+
+    .page-content {
+
+        ul {
+            list-style-position: inside;
+
+            li {
+                &:before {
+                    content: '\25CF';
+                    font-size: 12px;
+                    padding-right: 10px;
+                    top: -2px;
+                    vertical-align: middle;
+                    @include pos-rel;
+                    @include bootstrap-icon-rules;
+                }
+            }
+        }
+
+        li {
+            ol {
+                > li {
+                    &:before {
+                        content: counters(item, '.') ' ';
+                    }
+                }
+            }
+        }
+
+        ol {
+            counter-reset: item;
+            margin: 0 0 24px 0;
+
+            > li {
+                counter-increment: item;
+
+                &:before {
+                    content: counters(item, '.') '.';
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.page-content {
+    > .container {
+        padding-left: calc(var(--bs-gutter-x) * -0.5);
+        padding-right: calc(var(--bs-gutter-x) * -0.5);
+    }
+}

@@ -1,0 +1,13 @@
+.page-sidebar {
+    .block-widget {
+        > .container {
+            padding-left: calc(var(--bs-gutter-x) * -0.5);
+            padding-right: calc(var(--bs-gutter-x) * -0.5);
+
+            .inner-blocks {
+                margin-left: calc(var(--bs-gutter-x) * -0.5);
+                margin-right: calc(var(--bs-gutter-x) * -0.5);
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+h1 {
+    @include h-mix($size__h1, $line-height__h1, $color__primary);
+}
+
+h2 {
+    @include h-mix($size__h2, $line-height__h2, $color__primary);
+}
+
+h3 {
+    @include h-mix($size__h3, $line-height__h3, $color__primary);
+}
+
+h4 {
+    @include h-mix($size__h4, $line-height__h4, $color__primary);
+}
+
+h5 {
+    @include h-mix($size__h5, $line-height__h5, $color__primary);
+}
+
+h6 {
+    @include h-mix($size__h6, $line-height__h6, $color__primary);
+}

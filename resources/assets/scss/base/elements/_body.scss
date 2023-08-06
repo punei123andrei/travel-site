@@ -1,0 +1,21 @@
+body {
+    background: $color__white;
+    overflow-x: hidden;
+    @include p-mix($size__p, $line-height__p, $color__primary);
+
+    &.body-no-scroll {
+        overflow: hidden;
+        position: static;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+html {
+    #wpadminbar {
+        @include pos-fix;
+    }
+}

@@ -1,0 +1,10 @@
+
+.edit-widgets-widget-areas {
+    .edit-widgets-widget-areas__top-container {
+        a {
+            &.components-button {
+                display: none;
+            }
+        }
+    }
+}

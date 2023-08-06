@@ -1,0 +1,48 @@
+@import '../abstracts/abstracts';
+
+// tinymce iframe body element
+body {
+    @import '../base/typography/copy';
+    @import '../base/typography/headings';
+    @import '../base/elements/lists';
+    @import '../base/elements/links';
+
+    ul {
+        list-style-position: inside;
+
+        li {
+            &:before {
+                content: '\25CF';
+                font-size: 12px;
+                padding-right: 10px;
+                top: -2px;
+                vertical-align: middle;
+                @include pos-rel;
+            }
+        }
+    }
+
+    li {
+        ol {
+            > li {
+                &:before {
+                    content: counters(item, '.') ' ';
+                }
+            }
+        }
+    }
+
+    ol {
+        counter-reset: item;
+        margin: 0 0 24px 0;
+
+        > li {
+            counter-increment: item;
+
+            &:before {
+                content: counters(item, '.') '.';
+                padding-right: 8px;
+            }
+        }
+    }
+}

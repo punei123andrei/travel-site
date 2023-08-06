@@ -1,0 +1,3 @@
+p {
+    @include p-mix($size__p, $line-height__p, $color__primary);
+}

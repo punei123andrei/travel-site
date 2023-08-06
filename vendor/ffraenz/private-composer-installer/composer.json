@@ -1,0 +1,53 @@
+{
+  "name": "ffraenz/private-composer-installer",
+  "description": "A composer install helper for private packages",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fränz Friederes",
+      "email": "fraenz@frieder.es",
+      "homepage": "https://fraenz.frieder.es"
+    }
+  ],
+  "keywords": [
+    "composer",
+    "plugin",
+    "env",
+    "private",
+    "wordpress",
+    "wp"
+  ],
+  "require": {
+    "php": "^7.1 || ^8.0",
+    "composer-plugin-api": "^1.0 || ^2.0",
+    "vlucas/phpdotenv": "^4.1 || ^5.2"
+  },
+  "require-dev": {
+    "composer/composer": "^1.0 || ^2.0",
+    "laminas/laminas-coding-standard": "^2.0",
+    "symfony/phpunit-bridge": "^5.1",
+    "symfony/process": "^4.4 || ^5.1"
+  },
+  "scripts": {
+    "test": [
+      "@cs-check",
+      "@test-unit",
+      "@test-integration"
+    ],
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test-unit": "vendor/bin/simple-phpunit --testsuite unit --verbose",
+    "test-unit-coverage": "vendor/bin/simple-phpunit --testsuite unit --verbose --coverage-clover clover.xml",
+    "test-integration": "vendor/bin/simple-phpunit --testsuite integration --verbose"
+  },
+  "autoload": {
+    "psr-4": {
+      "FFraenz\\PrivateComposerInstaller\\": "src"
+    }
+  },
+  "extra": {
+    "class": "FFraenz\\PrivateComposerInstaller\\Plugin",
+    "plugin-modifies-downloads": true
+  }
+}
